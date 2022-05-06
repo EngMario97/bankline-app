@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-6">Movimentação</h1>
+        <p class="lead-1">Inclusão de uma nova movimentação</p>
+        <hr class="my-2">
+
+        <div class="col-md-3">
+            <label for="iDate" class="form-label">Data</label>
+            <input type="date" [(ngModel)]="datetime" class="form-control" id="iData">
+        </div>
+        <div class="col-md-9">
+            <label for="iAccountHolder" class="form-label">Correntista</label>
+            <select id="iAccountHolder" [(ngModel)]="accountHolderSelect" class="form-select">
+                <option *ngFor="let c of accountHolders" [ngValue]="c">{{c.cpf}} - {{c.name}}</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="iDescription" class="form-label">Descrição</label>
+            <input type="text" class="form-control" id="iDescription" [(ngModel)]="description"
+                placeholder="Informe uma descrição">
+        </div>
+        <div class="col-md-3">
+            <label for="iType" class="form-label">Tipo Movimentação</label>
+            <select id="iType" [(ngModel)]="type" class="form-select">
+                <option selected>RECEITA</option>
+                <option>DESPESA</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="iValue" class="form-label">R$ Valor</label>
+            <input type="text" [(ngModel)]="value" currencyMask
+                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValue">
+        </div>
+        <div class="d-grid gap-2 d-md-flex ">
+            <button class="btn btn-outline-primary me-md-2" (click)="save()" type="button">Confirmar</button>
+            <a routerLink="/movement" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+
+    </div>
+
+</div>
