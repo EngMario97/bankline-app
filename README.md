@@ -1,4 +1,10 @@
-# BanklineApp
+# Santander DEV WEEK 2022 - BANKLINE APP WEB
+
+## APP WEB ANGULAR de uma abstração de extrato bancário
+
+### Repositório da API utilizada: https://github.com/EngMario97/bankline-api
+
+### Deploy da API em: https://mario-dio-bankline-api.herokuapp.com/swagger-ui/index.html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
