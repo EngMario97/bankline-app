@@ -12,11 +12,15 @@ export class MovementService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
-    return this.http.get(`${baseUrl}/movimentacao`);
+    return this.http.get(`${baseUrl}/movimentacoes`);
+  }
+
+  findByIdAccount(idAccount: any): Observable<any> {
+    return this.http.get(`${baseUrl}/movimentacoes/${idAccount}`);
   }
 
   // adicionando o método de inclusão (POST) via API
   create(movement: any): Observable<any> {
-    return this.http.post(`${baseUrl}/movimentacao`, movement);
+    return this.http.post(`${baseUrl}/movimentacoes`, movement);
   }
 }
